@@ -8,7 +8,7 @@ import java.util.Objects;
 public class ArrayList<T> implements List<T> {
     private static final int DEFAULT_CAPACITY = 16;
     private Object [] array;
-    private int size;
+    private int size = 0;
     public ArrayList(int capacity) {
         array = new Object[capacity];
     }

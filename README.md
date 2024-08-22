@@ -1,7 +1,4 @@
-# CW 20
-## Initial structure of Collection, List interfaces and ArrayListClass
-## Initial structure for testing with OOD approach
-# HW 20
-## writing all TODO methods in the class ArrayList
-## writing all TODO test methods in the abstract class CollectionTest
-## writing all TODO test methods in the abstract class ListTest
+# CW 21
+## Initial code (all cases for adding new node and getting node by index)
+# HW 21
+## Writing all methods of the class LinkedList with TODO's comments
