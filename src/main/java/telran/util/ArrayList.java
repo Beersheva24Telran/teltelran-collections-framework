@@ -30,16 +30,7 @@ public class ArrayList<T> implements List<T> {
     private void reallocate() {
           array = Arrays.copyOf(array, array.length * 2);
     }
-    @Override
-    public boolean remove(T pattern) {
-      boolean res = false;
-      int index = indexOf(pattern);
-      if (index >= 0) {
-        res = true;
-        remove(index);
-      }
-      return res;
-    }
+   
 
     @Override
     public int size() {
@@ -51,10 +42,7 @@ public class ArrayList<T> implements List<T> {
         return size == 0;
     }
 
-    @Override
-    public boolean contains(T pattern) {
-       return indexOf(pattern) >= 0;
-    }
+   
 
     @Override
     public Iterator<T> iterator() {
@@ -70,18 +58,14 @@ public class ArrayList<T> implements List<T> {
         size++;
     }
 
-    private void checkIndex(int index, boolean sizeInclusive) {
-       int limit = sizeInclusive ? size : size - 1;
-       if (index < 0 || index > limit) {
-        throw new IndexOutOfBoundsException(index);
-       }
-    }
+   
     @Override
     public T remove(int index) {
         checkIndex(index, false);
         T res = (T)array[index];
         size--;
         System.arraycopy(array, index + 1, array, index, size - index);
+        array[size] = null;
         return res;
     }
 
