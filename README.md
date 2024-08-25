@@ -1,4 +1,8 @@
-# CW 21
-## Initial code (all cases for adding new node and getting node by index)
-# HW 21
-## Writing all methods of the class LinkedList with TODO's comments
+# CW 22
+## remove method in Iterator for ArrayList
+## removeIf in Collection based on Iterator
+## clear based on removeIf in Collection
+## tests for removeIf and clear in CollectionTest
+# HW 22
+## removeIf in ArrayList without using Iterator (overriding the method in interface Collection)
+## remove in Iterator for class LinkedList

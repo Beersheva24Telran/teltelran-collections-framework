@@ -30,6 +30,10 @@ public class LinkedList<T> implements List<T> {
             current = current.next;
             return res;
         }
+        @Override
+        public void remove(){
+            //TODO
+        }
         
     }
 
