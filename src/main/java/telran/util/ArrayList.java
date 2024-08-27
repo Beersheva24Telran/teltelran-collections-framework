@@ -96,10 +96,18 @@ public class ArrayList<T> implements List<T> {
     }
     @Override
     public boolean removeIf(Predicate<T> predicate) {
-        //TODO
-        //algorithm complexity O[N]
-        //hint: two indices and going throught one array
-        return false;
+       int indexTo = 0;
+       Predicate<T> negPred = predicate.negate(); //not to apply "!" operator at each iteration
+       for(int currentIndex = 0; currentIndex < size; currentIndex++) {
+        T current = (T)array[currentIndex];
+            if(negPred.test(current)) {
+                array[indexTo++] = current;
+            }
+       }
+       Arrays.fill(array,indexTo, size, null);
+       boolean res = indexTo < size;
+       size = indexTo;
+       return res;
     }
 
     private class ArrayListIterator implements Iterator<T> {
