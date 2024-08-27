@@ -1,10 +1,7 @@
-# CW 22
-## remove method in Iterator for ArrayList
-## removeIf in Collection based on Iterator
-## clear based on removeIf in Collection
-## tests for removeIf and clear in CollectionTest
-## performance test for removeIf in CollectionTest
-# HW 22
-## removeIf in ArrayList without using Iterator (overriding the method in interface Collection)
-## remove in Iterator for class LinkedList
-## the performance and functional tests should be passed
+# CW 23
+## HashSet basic methods incuding hashTableReallocation
+## SetTest for specific adding existing element test (returns false) and get(pattern) test
+## HashSetTest for creating actual HashSet object and overriding runTest (taking in consideration unpredicatble iterating order)
+
+# HW 23
+## all methods will TODO comments
