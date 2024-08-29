@@ -110,7 +110,7 @@ public class HashSet<T> implements Set<T> {
        for(List<T> list: hashTable) {
         if(list != null) {
             list.forEach(obj -> addObjInHashTable(obj, tempTable));
-            list.clear(); //??? for testing if it doesn't work remove this statement
+            list.clear(); 
         }
        }
        hashTable = tempTable;

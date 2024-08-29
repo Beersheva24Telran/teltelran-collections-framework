@@ -1,7 +1,6 @@
-# CW 23
-## HashSet basic methods incuding hashTableReallocation
-## SetTest for specific adding existing element test (returns false) and get(pattern) test
-## HashSetTest for creating actual HashSet object and overriding runTest (taking in consideration unpredicatble iterating order)
+# CW 24
+## TreeSet adding object based on getParentOrNode (infrastracture method)
 
-# HW 23
-## all methods will TODO comments
+
+# HW 24
+## all methods with TODO comments
