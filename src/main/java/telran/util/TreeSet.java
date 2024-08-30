@@ -123,8 +123,12 @@ public class TreeSet<T> implements Set<T> {
     }
     private Node<T> getNode(T pattern) {
         Node<T> res = getParentOrNode(pattern);
-        int compRes = comparator.compare(pattern, res.obj);
-        return compRes == 0 ? res : null;
+        if(res != null) {
+            int compRes = comparator.compare(pattern, res.obj);
+            res = compRes == 0 ? res : null;
+        }
+        
+        return res;
 
     }
     private Node<T> getParent(T pattern) {
