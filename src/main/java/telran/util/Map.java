@@ -28,7 +28,9 @@ public interface Map<K, V> {
         }
         @Override
         public boolean equals (Object obj) {
-            return key.equals(obj);
+           Entry<K,V> entry = (Entry<K,V>) obj;
+           
+            return key.equals(entry.key);
         }
     }
     V get(Object key);

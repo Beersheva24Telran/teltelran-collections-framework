@@ -1,13 +1,17 @@
 package telran.util;
 
+import java.util.Arrays;
+
+import org.junit.jupiter.api.Test;
+
+import telran.util.Map.Entry;
+
 public abstract class AbstractMapTest {
-//TODO
+Integer[] keys = {1, -1};
 Map<Integer, Integer> map;
-//TODO
 void setUp() {
-    //TODO
+   //TODO
 }
-abstract <T> void runTest(T [] expected);
-//Tests 
-//TODO
+abstract <T> void runTest(T [] expected, T [] actual);
+//TODO tests
 }

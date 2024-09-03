@@ -1,11 +1,13 @@
 package telran.util;
-
+@SuppressWarnings("unchecked")
 public abstract class AbstractMap<K, V> implements Map<K, V> {
     protected Set<Entry<K, V>> set;
     protected abstract Set<K> getEmptyKeySet();
     @Override
     public V get(Object key) {
-       Entry<K,V> entry = set.get(key);
+        
+        Entry<K, V> pattern = new Entry<>((K)key, null);
+       Entry<K,V> entry = set.get(pattern);
        V res = null;
        if (entry != null) {
         res = entry.getValue();
