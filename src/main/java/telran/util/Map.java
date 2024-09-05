@@ -43,8 +43,11 @@ public interface Map<K, V> {
     }
     V put(K key, V value);
     default V putIfAbsent(K key, V value) {
-        //TODO
-        return null;
+        V res = get(key);
+        if (res == null) {
+            put(key, value);
+        }
+        return res;
     }
     boolean containsKey(Object key);
     boolean containsValue(Object value);
