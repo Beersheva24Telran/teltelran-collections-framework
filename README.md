@@ -1,11 +1,14 @@
-# CW 25
-## Map interface
-## AbstractMap get, getEmptyKeySet - abstract method, entrySet
-## HashMap, TreeMap implementations
-## Testing initial structure
+# CW 26
+## SortedSet with floor(T), ceiling(T), subSet(T, T), first(), last()
+## TreeSet implements SortedSet
+## SortedSetTest
+## LinkedHashSet initial code
+## LinkedHashSetTest
+## adds remove method in Map interface and implementation in AbstractMap
 
 
-# HW 25
-## all methods of class AbstractMap with TODO comments
-## test methods of class AbstractMapTest 
-## runTest of classes HshMapTest and TreeMapTest
+
+# HW 26
+## new methods of TreeSet from SortedSet
+## all methods of LinkedHashSet
+
