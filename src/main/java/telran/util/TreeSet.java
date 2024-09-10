@@ -61,15 +61,19 @@ public class TreeSet<T> implements SortedSet<T> {
         if (!contains(obj)) {
             res = true;
             Node<T> node = new Node<>(obj);
-            if(root == null) {
-                addRoot(node);
-            } else {
-                addAfterParent(node);
-            }
-            size++;
+            addNode(node);
 
         }
         return res;
+    }
+
+    private void addNode(Node<T> node) {
+        if(root == null) {
+            addRoot(node);
+        } else {
+            addAfterParent(node);
+        }
+        size++;
     }
 
     private void addAfterParent(Node<T> node) {
@@ -219,31 +223,65 @@ private Node<T> getNextCurrent(Node<T> current) {
 
     @Override
     public T first() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'first'");
+        if(root == null) {
+            throw new NoSuchElementException();
+
+        }
+        return getLeastFrom(root).obj;
     }
 
     @Override
     public T last() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'last'");
+        if(root == null) {
+            throw new NoSuchElementException();
+
+        }
+        return getGreatestFrom(root).obj;
     }
 
     @Override
     public T floor(T key) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'floor'");
+       return floorCeilingObj(key, true);
     }
 
     @Override
     public T ceiling(T key) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'ceiling'");
+        return floorCeilingObj(key, false);
     }
 
     @Override
     public SortedSet<T> subSet(T keyFrom, T keyTo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'subSet'");
+       if(comparator.compare(keyFrom, keyTo) > 0) {
+        throw new IllegalArgumentException();
+       }
+       TreeSet<T> subTree = new TreeSet<>(comparator);
+       Node<T> ceilingNode = floorCeilingNode(keyFrom, false);
+            Node<T> current = ceilingNode;
+            while(current != null && comparator.compare(current.obj, keyTo) < 0) {
+                subTree.add(current.obj);
+                current = getNextCurrent(current);
+            }
+       return subTree;
+    }
+    private Node<T> floorCeilingNode(T key, boolean isFloor) {
+		Node<T> res = null;
+		int compRes = 0;
+		Node<T> current = root;
+		while (current != null && (compRes = comparator.compare(key, current.obj)) != 0) {
+			if ((compRes < 0 && !isFloor) || (compRes > 0 && isFloor)) {
+				res = current;
+			}
+			current = compRes < 0 ? current.left : current.right;
+		}
+		return current == null ? res : current;
+
+	}
+    private T floorCeilingObj(T key, boolean isFloor) {
+        T res = null;
+        Node<T> node = floorCeilingNode(key, isFloor);
+        if (node != null) {
+            res = node.obj;
+        }
+        return res;
     }
 }
