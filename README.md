@@ -1,14 +1,12 @@
-# CW 26
-## SortedSet with floor(T), ceiling(T), subSet(T, T), first(), last()
-## TreeSet implements SortedSet
-## SortedSetTest
-## LinkedHashSet initial code
-## LinkedHashSetTest
-## adds remove method in Map interface and implementation in AbstractMap
+# CW 28
+## Non-linear tasks resolved by recursion
+### hight of tree (number of the nodes in the longest linked list)
+### width of tree (number of linked lists)
+### tests for both CW code and HW code
 
 
 
-# HW 26
-## new methods of TreeSet from SortedSet
-## all methods of LinkedHashSet
+# HW 28
+## inversion of tree (swapped left with right references)
+## displaying tree in the form of parent-children
 
