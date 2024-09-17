@@ -316,7 +316,15 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     public void displayTreeParentChildren() {
-        // TODO
+        displayTreeParentChildren(root, 1);
+    }
+
+    private void displayTreeParentChildren(Node<T> root, int level) {
+        if(root != null) {
+            displayRootObject(root.obj, level);
+            displayTreeParentChildren(root.left, level + 1);
+            displayTreeParentChildren(root.right, level + 1);
+        }
     }
 
     public int width() {
@@ -346,9 +354,22 @@ public class TreeSet<T> implements SortedSet<T> {
     }
 
     public void inversion() {
-        // TODO
-        // reversing nodes placement with the same root and with the same nodes
-        // only left , right references should be swapped
+        inversion(root);
+        comparator = comparator.reversed();
+    }
+
+    private void inversion(Node<T> root) {
+       if(root != null) {
+         swapLeftRight(root);
+         inversion(root.left);
+         inversion(root.right);
+       }
+    }
+
+    private void swapLeftRight(Node<T> root) {
+        Node<T> tmp = root.left;
+         root.left = root.right;
+         root.right = tmp;
     }
 
     private void displayTreeRotated(Node<T> root, int level) {

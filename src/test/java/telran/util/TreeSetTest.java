@@ -27,12 +27,14 @@ public class TreeSetTest extends SortedSetTest{
     }
     @Test
     void displayTreeRotatedTest(){
+        System.out.println("\n------------Displaying Tree Rotated---------------");
         treeSet.setSymbolsPerLevel(5);
         treeSet.displayTreeRotated();
     }
     @Test
     void displayTreeParentChildrenTest(){
-        treeSet.setSymbolsPerLevel(5);
+        System.out.println("\n------------Displaying Tree Parent-Children---------------");
+        treeSet.setSymbolsPerLevel(3);
         treeSet.displayTreeParentChildren();
     }
     @Test
