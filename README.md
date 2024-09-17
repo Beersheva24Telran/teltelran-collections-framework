@@ -1,12 +1,17 @@
-# CW 28
-## Non-linear tasks resolved by recursion
-### hight of tree (number of the nodes in the longest linked list)
-### width of tree (number of linked lists)
-### tests for both CW code and HW code
+# CW 29
+## introducing class TreeSetStandard implementing telran.util.SortedSet
+## running tests comparing performance of TreeSetStndard comprising of the stndard java.util.TreeSet and telran.util.TreeSet
+### explanation why telran.util.TreeSet doesn't work at adding 1000000 numbers in sorted order
+## method balance in telran.util.TreeSet
+## testing method balance
 
 
 
-# HW 28
-## inversion of tree (swapped left with right references)
-## displaying tree in the form of parent-children
+# HW 29
+## Writing method getBigArrayHW in the class SortedSetTest
+### allows creating array for creating a balanced TreeSet with no addition "balance" method call
+## Test of the method getBigArrayHW - balanceTestHW 
+### uses the method getBigArrayHW
+### creates and fills TreeSet from the created array
+### checks that the created TreeSet is a balanced with no addition balance method call
 
