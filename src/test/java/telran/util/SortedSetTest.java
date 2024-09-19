@@ -78,10 +78,23 @@ public abstract class SortedSetTest extends SetTest {
 
     }
     protected Integer[] getBigArrayHW() {
-        //TODO
-        return null;
+        Integer[] randomArray = getBigArrayCW();
+        Arrays.sort(randomArray);
+        Integer[] balancedArray = new Integer[randomArray.length];
+         fillBalancedArray(randomArray, balancedArray, 0, randomArray.length - 1, new int[]{0});
+         return balancedArray;
  
      }
+    private void fillBalancedArray(Integer[] sortedArray, Integer[] balancedArray, int left, int right,
+     int[] currentIndexRef) {
+       if(left <= right) {
+            int rootIndex = (left + right) / 2;
+            balancedArray[currentIndexRef[0]++] = sortedArray[rootIndex];
+            fillBalancedArray(sortedArray, balancedArray, left, rootIndex - 1, currentIndexRef);
+            fillBalancedArray(sortedArray, balancedArray, rootIndex + 1, right, currentIndexRef);
+       }
+    }
+
     @Override
     protected void runTest(Integer[] expected) {
         Integer[] expectedSorted = Arrays.copyOf(expected, expected.length);
